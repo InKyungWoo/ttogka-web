@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import logo from "../assets/images/logo.jpg";
+import logo from "../../assets/images/logo.jpg";
 
 const Home = () => {
   return (

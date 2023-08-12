@@ -1,8 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 
 // pages
-import Home from "./pages/Home";
-import SelectMenu from "./pages/SelectMenu";
+import Home from "./pages/home/Home";
+import SelectMenu from "./pages/select/SelectMenu";
+import CategoryRank from "./pages/rank/CategoryRank";
+import SearchCardCompany from "./pages/search/SearchCardCompany";
+import MyList from "./pages/myList/MyList";
+import Introduction from "./pages/introduction/Introduction";
 
 function App() {
   return (
@@ -10,6 +14,10 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/select-menu" element={<SelectMenu />} />
+        <Route path="/category-rank" element={<CategoryRank />} />
+        <Route path="/search-card-company" element={<SearchCardCompany />} />
+        <Route path="/mylist" element={<MyList />} />
+        <Route path="/introduction" element={<Introduction />} />
       </Routes>
     </div>
   );
