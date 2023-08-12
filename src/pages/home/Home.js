@@ -1,11 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-import logo from "../../assets/images/logo.jpg";
+import logo from "../../assets/images/home_logo.jpg";
 
 const Home = () => {
+  const naviagte = useNavigate();
+
+  const handlePageClickOrTouch = () => {
+    naviagte("/select-menu");
+  };
+
   return (
-    <Container>
+    <Container
+      onClick={handlePageClickOrTouch}
+      onTouchStart={handlePageClickOrTouch}
+    >
       <LogoImg src={logo} />
       <TextContainer>
         <BoldText>똑카</BoldText>
