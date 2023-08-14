@@ -27,19 +27,12 @@ const GlobalStyle = createGlobalStyle`
 
   @media (max-width: 479px) {
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       min-height: 100vh;
     }
   }
 
   @media (min-width: 480px) {
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
       background-color: white;
     }
 
