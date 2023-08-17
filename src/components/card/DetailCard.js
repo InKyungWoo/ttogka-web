@@ -15,5 +15,5 @@ const Container = styled.div`
   flex-direction: column;
   min-height: 100vh;
   background-image: url(${background});
-  color: white;
+  background-size: cover;
 `;
