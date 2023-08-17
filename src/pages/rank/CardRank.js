@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import styled from "styled-components";
 
 // components
@@ -8,12 +10,17 @@ import CardList from "../../components/card/CardList";
 import logo from "../../assets/images/logo_gra.png";
 
 const CardRank = () => {
+  const naviagte = useNavigate();
+
   const [activeButton, setActiveButton] = useState("체크카드");
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
   };
 
+  const clickLogo = () => {
+    naviagte("/");
+  };
   return (
     <Container>
       <TopContainer>
@@ -21,7 +28,7 @@ const CardRank = () => {
           <Title>카드명 순위</Title>
           <Subtitle>카드사별 분야 순위를 알려드릴게요!</Subtitle>
         </TextContainer>
-        <LogoImage src={logo} />
+        <LogoImage src={logo} onClick={clickLogo} />
       </TopContainer>
       <ButtonContainer>
         <CardButton

@@ -42,6 +42,13 @@ const data = {
       image:
         "https://api.card-gorilla.com:8080/storage/card/2458/card_img/28788/2458card.png",
     },
+    {
+      id: 5,
+      card: "신한카드5",
+      brand: "신한카드",
+      image:
+        "https://api.card-gorilla.com:8080/storage/card/2458/card_img/28788/2458card.png",
+    },
   ],
 };
 
