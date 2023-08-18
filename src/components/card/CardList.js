@@ -82,7 +82,7 @@ const CardList = () => {
 
   return (
     <CardContainer>
-      <NavigateButton onClick={handlePrevPage} disabled={currentPage === 1}>
+      <NavigateButton onClick={handlePrevPage}>
         <IoIosArrowBack className="arrow" />
       </NavigateButton>
 

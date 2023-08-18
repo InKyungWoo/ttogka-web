@@ -19,7 +19,7 @@ const CardRank = () => {
   };
 
   const clickLogo = () => {
-    naviagte("/");
+    naviagte("/select-menu");
   };
   return (
     <Container>
