@@ -32,16 +32,16 @@ const CardRank = () => {
       </TopContainer>
       <ButtonContainer>
         <CardButton
-          active={activeButton === "체크카드"}
-          onClick={() => handleButtonClick("체크카드")}
-        >
-          체크카드
-        </CardButton>
-        <CardButton
           active={activeButton === "신용카드"}
           onClick={() => handleButtonClick("신용카드")}
         >
           신용카드
+        </CardButton>
+        <CardButton
+          active={activeButton === "체크카드"}
+          onClick={() => handleButtonClick("체크카드")}
+        >
+          체크카드
         </CardButton>
       </ButtonContainer>
       <CardList />
