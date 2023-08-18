@@ -2,7 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-import logo from "../../assets/images/home_logo.jpg";
+// 애가 코드 돌아가는 import
+import logo from "../../assets/images/home_logo_nogra.png";
+
+// 얘가 코드 돌아가는 import
+import background from "../../assets/images/home_background.png";
+
 
 const Home = () => {
   const naviagte = useNavigate();
@@ -18,7 +23,7 @@ const Home = () => {
     >
       <LogoImg src={logo} />
       <TextContainer>
-        <BoldText>똑카</BoldText>
+        <BoldText>똑 카</BoldText>
         <HrLine />
         <NormalText>똑똑한 카드생활</NormalText>
       </TextContainer>
@@ -33,14 +38,19 @@ const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
-  background-color: #1b433e;
   color: white;
+
+  background-image:url(${background});
 `;
 
+
 const LogoImg = styled.img`
-  width: 35%;
+  width: 55%;
   margin: 13%;
   align-self: flex-end;
+
+  width : 50%
+
 `;
 
 const TextContainer = styled.div`
@@ -52,11 +62,14 @@ const TextContainer = styled.div`
   width: 100%;
   margin-top: 30%;
   padding: 7%;
+
 `;
 
 const BoldText = styled.div`
   font-size: 4.5rem;
   font-family: "Happiness-Sans-Title";
+
+  font-size : 8.5rem;
 `;
 
 const HrLine = styled.hr`
@@ -68,4 +81,6 @@ const HrLine = styled.hr`
 
 const NormalText = styled.div`
   font-size: 2.5rem;
+
+  font-size: 5rem;
 `;
