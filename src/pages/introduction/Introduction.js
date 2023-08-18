@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-
 import { Navigate, useNavigate } from "react-router-dom";
 
 import page01 from "../../assets/images/introduction_01.png";
@@ -15,7 +14,7 @@ import page06 from "../../assets/images/introduction_06.png";
 const Introduction = () => {
   const imgs = [page01, page02, page02_2, page03, page04, page05, page06];
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   const navigate = useNavigate();
 
   const handleImageTouch = () => {
@@ -51,12 +50,8 @@ const Container = styled.div`
 
 const IntroductionImg = styled.img`
   width: 100%;
-  
+  heigth: 100%;
   margin: 0;
   padding: 0;
-
-  min-height:100vh;
-
-  height : 100vh;
-
+  height: 100vh;
 `;
