@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+// api
+import { GetCardList } from "../../services/card/CardApis";
+
 // icons
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
@@ -42,36 +45,12 @@ const data = {
       image:
         "https://api.card-gorilla.com:8080/storage/card/2458/card_img/28788/2458card.png",
     },
-    {
-      id: 5,
-      card: "신한카드5",
-      brand: "신한카드",
-      image:
-        "https://api.card-gorilla.com:8080/storage/card/2458/card_img/28788/2458card.png",
-    },
   ],
 };
 
-const CardList = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const totalAmount = data.card_list.length;
-  const itemsPerPage = 5;
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-
-  const [currentData, setCurrentData] = useState(
-    data.card_list.slice(0, itemsPerPage)
-  );
-
-  const handleNextPage = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
-
-  const handlePrevPage = () => {
-    setCurrentPage((prevPage) => prevPage - 1);
-  };
-
+const CardList = ({ props }) => {
+  const [currentData, setCurrentData] = useState(data.card_list);
+  const [button, setButton] = useState("CRD");
   const getImageSize = (imageUrl, callback) => {
     const image = new Image();
     image.src = imageUrl;
@@ -80,15 +59,32 @@ const CardList = () => {
     };
   };
 
+  const companyId = 1; // test
+
+  const handleArrowButton = (state) => {
+    setCurrentData(state);
+
+    if (state === "CRD") {
+      const response = GetCardList(companyId, "CRD");
+      setCurrentData(response);
+    } else if (state === "CHK") {
+      const response = GetCardList(companyId, "CHK");
+      setCurrentData(response);
+    }
+  };
+
   return (
     <CardContainer>
-      <NavigateButton onClick={handlePrevPage}>
-        <IoIosArrowBack className="arrow" />
+      <NavigateButton>
+        <IoIosArrowBack
+          className="arrow"
+          onClick={() => handleArrowButton("CRD")}
+        />
       </NavigateButton>
 
       <CardListContainer>
-        {currentData.map((item, index) => (
-          <List key={item.id} isLast={index === currentData.length - 1}>
+        {data.card_list.map((item, index) => (
+          <List key={item.id} isLast={index === data.card_list.length - 1}>
             {item.image && (
               <CardImageContainer>
                 <CardImg
@@ -112,11 +108,11 @@ const CardList = () => {
         ))}
       </CardListContainer>
 
-      <NavigateButton
-        onClick={handleNextPage}
-        disabled={endIndex >= totalAmount}
-      >
-        <IoIosArrowForward className="arrow" />
+      <NavigateButton>
+        <IoIosArrowForward
+          className="arrow"
+          onClick={() => handleArrowButton("CHK")}
+        />
       </NavigateButton>
     </CardContainer>
   );
