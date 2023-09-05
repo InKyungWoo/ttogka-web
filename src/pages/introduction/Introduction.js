@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import page01 from "../../assets/images/introduction_01.png";
 import page02 from "../../assets/images/introduction_02.png";
@@ -50,8 +50,8 @@ const Container = styled.div`
 
 const IntroductionImg = styled.img`
   width: 100%;
-  heigth: 100%;
+  height: 100vh;
+  object-fit: contain;
   margin: 0;
   padding: 0;
-  height: 100vh;
 `;

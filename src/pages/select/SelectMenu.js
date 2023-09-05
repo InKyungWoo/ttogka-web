@@ -2,11 +2,7 @@
 import React from "react";
 
 import { useNavigate } from "react-router-dom";
-import { Styled, styled } from "styled-components";
-// import  styled  from "styled-components";
-// import { Alert } from "react-native";
-
-// import { useAlert } from 'react-alert';
+import styled from "styled-components";
 
 // img
 import selectlogo from "../../assets/images/select_logo.png";
@@ -66,30 +62,30 @@ const SelectMenu = () => {
       {/* 3. 버튼 요소들 */}
       <ButtonContainer>
         {/* 1. CategoryRank */}
-        <ButtonRank
+        <ButtonText
           onClick={handleButtonClickortouch01}
           onTouchStart={handleButtonClickortouch01}
         >
           분야별 순위
-        </ButtonRank>
+        </ButtonText>
 
         {/* 2. SearchCardCompany */}
-        <ButtonCompany
+        <ButtonText
           onClick={handleButtonClickortouch02}
           onTouchStart={handleButtonClickortouch02}
         >
           카드 선택
-        </ButtonCompany>
+        </ButtonText>
 
         {/* 3.MyList */}
-        <ButtonMylist
+        <ButtonText
           onClick={(handleButtonClickortouch03) =>
             alert("업데이트 후 이용 가능")
           }
           onTouchStart={handleButtonClickortouch03}
         >
           마이 리스트
-        </ButtonMylist>
+        </ButtonText>
       </ButtonContainer>
 
       {/* 4. 사용 방법 보기 */}
@@ -117,9 +113,7 @@ const Container = styled.div`
   color: #1b433e;
 `;
 
-{
-  /* 1. 로고 */
-}
+/** 1.로고 */
 const LogoImg = styled.img`
   // width : 33%;
   margin : 5%;
@@ -147,50 +141,29 @@ const LogoImg = styled.img`
   // left:50%;
 `;
 
-{
-  /* 2. 폰트 */
-}
+/** 2. 폰트 */
+
 const TextContainer = styled.div`
-  flex:1;
-  display:flex;
-  flex-direction:column;
-
-  // 이 설정때문에 높이 가운데에 위치한것
-  justify-content:center;
-  align-items:flex-start;
-  
-  width:100%
-  // margin-top:0%
-  // padding:1%
-
-  left : 5%;
-
-  height:0%
-
-  top: 20%;
-
-  margin:0%;
-  padding:0%;
-
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 const BoldText = styled.div`
-  font-size: 4.5rem;
   font-family: "Happiness-Sans-Title";
+  font-size: 6rem;
 
   padding: 0%;
   margin: 0%;
-
-  font-size: 6rem;
-
-  font-size: 7rem;
 `;
 
 const NomarText = styled.div`
   width: 100%;
   border: none;
   border-top: 0.3rem solid white;
-  margin: 3% 0%;
+  margin: 2% 0%;
 
   font-size: 2rem;
 
@@ -198,33 +171,28 @@ const NomarText = styled.div`
   white-space: pre-line;
 `;
 
-{
-  /* 3. 버튼 요소들 */
-}
+/** 3. 버튼 요소들 */
+
 const ButtonContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-
-  // 이 설정때문에 높이 가운데에 위치한 것
-  // justify-content:center;
-
-  justify-content: spave-between;
+  justify-content: space-between;
   align-items: flex-start;
 
   margin: 0%;
   padding: 0%;
 `;
 
-const ButtonRank = styled.div`
+const ButtonText = styled.div`
   // width : 300px;
   // height:100px;
   // padding: 8%;
 
   //width 랑 height rem이나 % 형식으로 바꾸기
   width: 30rem;
-  height: 10rem;
-  padding: 2.1rem;
+  height: 9rem;
+  padding: 2rem;
 
   margin: 0% 0% 0% 0%;
 
@@ -234,7 +202,7 @@ const ButtonRank = styled.div`
   box-shadow: 0px 4px 4px 0px rgba(165, 207, 97, 0.25);
 
   font-family: Inter;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-style: normal;
   font-weight: 600;
 
@@ -252,99 +220,27 @@ const ButtonRank = styled.div`
   }
 `;
 
-const ButtonCompany = styled.div`
-  // width : 300px;
-  // height:100px;
-  // padding: 7.5%;
+/** 4. 사용 방법 보기 */
 
-  width: 30rem;
-  height: 10rem;
-  padding: 2.1rem;
-
-  margin: 10% 0% 0% 0%;
-
-  border-radius: 100px;
-  border: 7.5px solid #a5cf61;
-  background: #fff;
-  box-shadow: 0px 4px 4px 0px rgba(165, 207, 97, 0.25);
-
-  font-family: Inter;
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 600;
-
-  line-height: nomal;
-  letter-spacing: -2px;
-
-  text-align: center;
-
-  &:hover {
-    border: 7.5px solid #a5cf61;
-    background: #a5cf31;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-    color: #fff;
-  }
-`;
-
-const ButtonMylist = styled.div`
-  // width : 300px;
-  // height:100px;
-  // padding: 7.5%;
-
-  width: 30rem;
-  height: 10rem;
-  padding: 2.1rem;
-
-  margin: 10% 0% 0% 0%;
-
-  border-radius: 100px;
-  border: 7.5px solid #a5cf61;
-  background: #fff;
-  box-shadow: 0px 4px 4px 0px rgba(165, 207, 97, 0.25);
-
-  font-family: Inter;
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 600;
-
-  line-height: nomal;
-  letter-spacing: -2px;
-
-  text-align: center;
-
-  &:hover {
-    border: 7.5px solid #a5cf61;
-    background: #a5cf31;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-    color: #fff;
-  }
-`;
-
-{
-  /* 4. 사용 방법 보기 */
-}
 const LinkIntroduction = styled.div`
-  color : #264e49;
+  color: #264e49;
 
-  margin: 0% 0% 5% 0%;
+  margin: 5%;
+  padding: 1%;
+  text-align: center;
 
-  text-align:center:
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
 
-  font-family : Inter;
-  font-size:20px;
-  font-style:normal;
-  font-weight:600;
-  
-  line-height:nomal;
-  letter-spacing : -2px;
+  line-height: nomal;
+  letter-spacing: -1.5px;
 
-  white-space : pre-wrap;
+  white-space: pre-wrap;
 
   &:hover {
-    background:#264e49;
-    color:#fff;
+    background: #264e49;
+    color: #fff;
     cursor: pointer;
   }
 `;
