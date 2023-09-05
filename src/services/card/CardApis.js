@@ -3,7 +3,7 @@ import api from "../utils";
 /** 주요 카드사 목록 api */
 export const GetMajorCardCompany = async () => {
   try {
-    const response = await api.get(`/brand`, {});
+    const response = await api.get(`/brand/`, {});
     return response.data;
   } catch (error) {
     console.error(

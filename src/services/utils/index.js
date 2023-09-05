@@ -2,7 +2,7 @@ import axios from "axios";
 
 // axios 인스턴스 생성
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/",
+  baseURL: "http://3.37.36.196/",
   headers: {
     "Content-Type": "application/json",
   },
@@ -19,6 +19,6 @@ const checkNetworkStatus = async () => {
   }
 };
 
-checkNetworkStatus();
+// checkNetworkStatus();
 
 export default api;
