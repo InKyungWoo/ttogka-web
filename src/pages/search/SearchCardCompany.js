@@ -4,18 +4,17 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import CardCompanyList from "../../components/searchcard/CardCompanyList";
-import { GiPreviousButton } from "react-icons/gi";
 
 const SearchCardCompany = () => {
   const navigate = useNavigate();
-  const [clicked, setClicked] = useState(false);  // clicked state
+  const [clicked, setClicked] = useState(false); // clicked state
 
-  const moveToExtraCardPage= () => {
+  const moveToExtraCardPage = () => {
     setClicked(!clicked);
     navigate("/extra-card", { replace: false });
   };
 
-  const moveToPreviousPage= () => {
+  const moveToPreviousPage = () => {
     setClicked(!clicked);
     navigate("/select-menu", { replace: false });
   };
@@ -23,10 +22,9 @@ const SearchCardCompany = () => {
   return (
     <Container>
       <CardCompanyList />
-      
+
       <ExtraContainer>
-        <ExtraCard clicked={clicked} 
-        onClick={moveToExtraCardPage}>
+        <ExtraCard clicked={clicked} onClick={moveToExtraCardPage}>
           기타 카드사
         </ExtraCard>
         <PreviousButton clicked={clicked} onClick={moveToPreviousPage}>
@@ -36,7 +34,6 @@ const SearchCardCompany = () => {
     </Container>
   );
 };
-
 
 export default SearchCardCompany;
 
@@ -60,15 +57,14 @@ const ExtraCard = styled.button`
   width: 90%;
   height: 9rem;
   border-radius: 100px;
-  background-color: ${({ clicked }) => (clicked ? '#264E49' : '#ffffff')}; 
+  background-color: ${({ clicked }) => (clicked ? "#264E49" : "#ffffff")};
   font-size: 3.5rem;
   font-weight: bold;
   margin: auto;
   margin-top: 6rem;
-  color: ${({ clicked }) => (clicked ? '#ffffff' : '#264E49')}; 
+  color: ${({ clicked }) => (clicked ? "#ffffff" : "#264E49")};
   border: 2px solid #f9f9f9;
-  box-shadow: 
-    0px 1px 1px rgba(206, 206, 206, 0.25),
+  box-shadow: 0px 1px 1px rgba(206, 206, 206, 0.25),
     0px -1px 1px rgba(206, 206, 206, 0.25),
     1px 0px 1px rgba(206, 206, 206, 0.25),
     -1px 0px 1px rgba(206, 206, 206, 0.25);
@@ -79,15 +75,14 @@ const PreviousButton = styled.button`
   width: 90%;
   height: 9rem;
   border-radius: 100px;
-  background-color: ${({ clicked }) => (clicked ? '#264E49' : '#ffffff')}; 
+  background-color: ${({ clicked }) => (clicked ? "#264E49" : "#ffffff")};
   font-size: 3.5rem;
   font-weight: bold;
   margin: auto;
   margin-top: 6rem;
-  color: ${({ clicked }) => (clicked ? '#ffffff' : '#264E49')}; 
+  color: ${({ clicked }) => (clicked ? "#ffffff" : "#264E49")};
   border: 2px solid #f9f9f9;
-  box-shadow: 
-    0px 1px 1px rgba(206, 206, 206, 0.25),
+  box-shadow: 0px 1px 1px rgba(206, 206, 206, 0.25),
     0px -1px 1px rgba(206, 206, 206, 0.25),
     1px 0px 1px rgba(206, 206, 206, 0.25),
     -1px 0px 1px rgba(206, 206, 206, 0.25);
