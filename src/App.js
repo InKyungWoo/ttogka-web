@@ -5,7 +5,7 @@ import Home from "./pages/home/Home";
 import SelectMenu from "./pages/select/SelectMenu";
 import CategoryRank from "./pages/rank/CategoryRank";
 import CardRank from "./pages/rank/CardRank";
-import SearchCardCompany from "./pages/search/SearchCardCompany";
+import MajorCardCompany from "./pages/search/MajorCardCompany";
 import ExtraCardCompany from "./pages/search/ExtraCardCompany";
 import CardDetail from "./pages/detail/CardDetail";
 import MyList from "./pages/myList/MyList";
@@ -22,9 +22,12 @@ function App() {
         {/* 분야별 순위 페이지 */}
         <Route path="/category-rank" element={<CategoryRank />} />
         {/* 주요 카드사 선택 페이지 */}
-        <Route path="/search-card-company" element={<SearchCardCompany />} />
+        <Route path="/search-card-company" element={<MajorCardCompany />} />
         {/* 기타 카드사 선택 페이지 */}
-        <Route path="/extra-card" element={<ExtraCardCompany />} />
+        <Route
+          path="/search-extra-card-company"
+          element={<ExtraCardCompany />}
+        />
         {/* 카드 순위 페이지 */}
         <Route path="/card-rank" element={<CardRank />} />
         {/* 마이리스트 페이지 */}
